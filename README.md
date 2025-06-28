@@ -1,4 +1,4 @@
-# Node.js EC2 + K8s + Ansible + Terraform Project
+# Node.js APP: EC2 + K8s + Ansible + Terraform Project
 
 ## Overview
 - Ansible playbooks for EC2 Linux automation Node.js app deployment
