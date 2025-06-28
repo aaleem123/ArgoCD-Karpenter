@@ -5,7 +5,6 @@
 - Ansible playbooks for Kubernetes (EKS) Node.js deployment
 - Terraform files for AWS EKS cluster setup
 - Dockerfile for containerizing Node.js app
-- Clean repo structure with .gitignore in place
 
 ## Folders
 - `app/` — Node.js application source code
@@ -14,6 +13,5 @@
 - `terraform/` — Terraform for EKS cluster
 - `manifests/` — Kubernetes manifests
 
-## Notes
-Ensure AWS credentials and kubeconfig are properly configured before running Ansible or Terraform commands.
+
 
