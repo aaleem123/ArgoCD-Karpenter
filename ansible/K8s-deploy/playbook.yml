@@ -1,0 +1,24 @@
+- name: Deploy Node.js Application to New K8s Namespace
+  hosts: localhost
+  gather_facts: no
+  tasks:
+
+    - name: Create new namespace 'bootcamp'
+      kubernetes.core.k8s:
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: bootcamp
+
+    - name: Deploy Node.js Deployment Manifest
+      kubernetes.core.k8s:
+        state: present
+        src: ../../manifests/deployment.yml
+
+    - name: Deploy Node.js Service Manifest
+      kubernetes.core.k8s:
+        state: present
+        src: ../../manifests/service.yml
+

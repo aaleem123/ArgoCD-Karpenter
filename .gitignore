@@ -1,12 +1,28 @@
-cat <<EOF > .gitignore
+# Node.js
 node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment files
 .env
+*.pem
+
+# Terraform
 .terraform/
 terraform.tfstate
 terraform.tfstate.backup
-*.log
-*.pem
+crash.log
 *.tfvars
+
+# Archives & Packages
+*.tar.gz
+*.zip
+
+# System files
 .DS_Store
-EOF
+Thumbs.db
+
+# Logs
+*.log
 
