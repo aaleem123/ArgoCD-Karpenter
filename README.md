@@ -5,6 +5,7 @@
 - Ansible playbooks for Kubernetes (EKS) Node.js deployment
 - Terraform files for AWS EKS cluster setup
 - Dockerfile for containerizing Node.js app
+- Image Repository: Dockerhub
 
 ## Folders
 - `app/` — Node.js application source code
