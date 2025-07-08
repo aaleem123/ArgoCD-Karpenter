@@ -74,14 +74,15 @@ provider "kubernetes" {
   host                   = data.aws_eks_cluster.cluster.endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority[0].data)
   token                  = data.aws_eks_cluster_auth.cluster.token
-  
-  depends_on = [module.eks]
 }
 
 resource "kubernetes_namespace" "bootcamp" {
   metadata {
     name = "bootcamp"
   }
+
+  depends_on = [null_resource.wait_for_eks]
+
 }
 
 resource "kubernetes_deployment" "node_app" {
@@ -122,6 +123,8 @@ resource "kubernetes_deployment" "node_app" {
       }
     }
   }
+  depends_on = [null_resource.wait_for_eks]
+
 }
 
 resource "kubernetes_service" "node_app" {
@@ -144,5 +147,9 @@ resource "kubernetes_service" "node_app" {
       protocol    = "TCP"
     }
   }
+
+  depends_on = [null_resource.wait_for_eks]
+
+
 }
 
