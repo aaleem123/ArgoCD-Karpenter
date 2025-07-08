@@ -1,1 +1,2 @@
 # trigger terraform apply
+# fixed aws creds for all steps
