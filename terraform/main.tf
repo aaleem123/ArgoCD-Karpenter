@@ -153,3 +153,39 @@ resource "kubernetes_service" "node_app" {
 
 }
 
+# Null resource to wait for EKS cluster to be ready
+resource "null_resource" "wait_for_eks" {
+  depends_on = [module.eks]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
