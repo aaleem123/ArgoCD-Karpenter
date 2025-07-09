@@ -1,9 +1,12 @@
 output "cluster_name" {
-  value = module.eks.cluster_name
+  value = data.aws_eks_cluster.cluster.name
 }
 
-output "app_url" {
-  value = kubernetes_service.node_app.status[0].load_balancer[0].ingress[0].hostname
-  description = "Public LoadBalancer URL for your Node.js app"
+output "cluster_endpoint" {
+  value = data.aws_eks_cluster.cluster.endpoint
+}
+
+output "cluster_arn" {
+  value = data.aws_eks_cluster.cluster.arn
 }
 
