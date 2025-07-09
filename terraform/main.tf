@@ -46,6 +46,10 @@ module "eks" {
   subnet_ids = module.vpc.private_subnets
   vpc_id     = module.vpc.vpc_id
 
+  cluster_endpoint_public_access  = true
+  cluster_endpoint_private_access = false
+
+
   eks_managed_node_groups = {
     default_node_group = {
       instance_types = ["t3.small"]
