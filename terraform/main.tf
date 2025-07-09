@@ -63,7 +63,12 @@ module "eks" {
     Terraform   = "true"
     Environment = "dev"
   }
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
+
 
 data "aws_eks_cluster" "cluster" {
   name       = module.eks.cluster_name
