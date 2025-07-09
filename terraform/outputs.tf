@@ -1,12 +1,8 @@
-output "cluster_name" {
-  value = data.aws_eks_cluster.cluster.name
+output "eks_cluster_name" {
+  value = module.eks.cluster_name
 }
 
-output "cluster_endpoint" {
-  value = data.aws_eks_cluster.cluster.endpoint
-}
-
-output "cluster_arn" {
-  value = data.aws_eks_cluster.cluster.arn
+output "eks_cluster_endpoint" {
+  value = module.eks.cluster_endpoint
 }
 
