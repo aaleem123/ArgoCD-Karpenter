@@ -11,11 +11,11 @@
 - ✅ EKS is provisioned via AWS UI
 
 **⚙️ Tools Used**
--🔹 Karpenter: smart autoscaling = reduced cost 💸 + optimized performance ⚡
--🔹 Amazon EKS 
--🔹 Argo CD 
--🔹 Docker 
--🔹 Node.js 
+- 🔹 Karpenter: smart autoscaling = reduced cost 💸 + optimized performance ⚡
+- 🔹 Amazon EKS 
+- 🔹 Argo CD 
+- 🔹 Docker 
+- 🔹 Node.js 
 
 **📸 Screenshots**
 
