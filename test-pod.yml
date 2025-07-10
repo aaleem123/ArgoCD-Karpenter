@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: karpenter-test
+spec:
+  containers:
+  - name: stress
+    image: public.ecr.aws/bitnami/nginx
+    resources:
+      requests:
+        cpu: "1"
+        memory: "1Gi"
+

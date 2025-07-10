@@ -1,0 +1,27 @@
+apiVersion: karpenter.sh/v1beta1
+kind: NodePool
+metadata:
+  name: t2-pool
+spec:
+  template:
+    metadata:
+      labels:
+        type: karpenter-t2
+    spec:
+      nodeClassRef:
+        name: t2-only
+      requirements:
+        - key: "node.kubernetes.io/instance-type"
+          operator: NotIn
+          values: ["t2.micro", "t2.nano"]
+        - key: "node.kubernetes.io/instance-type"
+          operator: In
+          values: ["t2.small", "t2.medium", "t2.large"]
+  limits:
+    cpu: "4"
+    memory: "8Gi"
+  disruption:
+    consolidationPolicy: WhenEmpty
+    consolidateAfter: 30s
+    expireAfter: 720h
+

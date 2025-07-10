@@ -1,0 +1,24 @@
+serviceAccount:
+  name: karpenter
+
+clusterName: nodejs-eks-karpenter
+clusterEndpoint: https://B0BFD1F94EF22521BDC1C3414F060B63.gr7.us-east-1.eks.amazonaws.com
+
+aws:
+  defaultInstanceProfile: KarpenterNodeInstanceProfile
+
+controller:
+  env:
+    - name: AWS_REGION
+      value: us-east-1
+    - name: AWS_NODE_NAME
+      valueFrom:
+        fieldRef:
+          fieldPath: spec.nodeName
+    - name: AWS_EC2_IMDS_DISABLED
+      value: "true"
+
+settings:
+  aws:
+    region: us-east-1
+
